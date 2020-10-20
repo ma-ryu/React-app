@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
 const List = (props) => (
-  <ul>
-    {props.todos.map((todo, i) => {
-      return <li key={i}>{todo.title}</li>
-    })}
-  </ul>
+  <div className="content">
+    <h3>Todo List</h3>
+    <ul>
+      {props.todos.map((todo, i) => {
+        return <li className="p-3" key={i}>{todo.title}<span className="delete ml-3" onClick={() => props.deleteTodo(i)}></span>
+        </li>
+      })}
+    </ul>
+  </div>
 );
 
 export default List;

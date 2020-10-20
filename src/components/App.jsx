@@ -9,6 +9,7 @@ export default class App extends Component {
       todo: []
     };
     this.handleAdd = this.handleAdd.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
   handleAdd(e){
@@ -18,12 +19,20 @@ export default class App extends Component {
 
     e.target.title.value = '';
   }
+
+  deleteTodo(i){
+    this.state.todo.splice(i, 1);
+    this.setState({todo: this.state.todo})
+  }
+
   render() {
     return (
       <div className="column is-three-fifths is-offset-one-fifth">
         <h1 className="mb-5">React Todo App</h1>
         <Form handleAdd={this.handleAdd} />
-        <List todos={this.state.todo} />
+        <div className="mt-5">
+          <List todos={this.state.todo} deleteTodo={this.deleteTodo} />
+        </div>
       </div>
     );
   }
