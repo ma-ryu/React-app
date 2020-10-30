@@ -13,3 +13,7 @@ const List = (props) => (
 );
 
 export default List;
+
+// 再編集
+// 追加時間
+// カテゴリー機能
