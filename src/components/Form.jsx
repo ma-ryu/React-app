@@ -6,7 +6,7 @@ const Form = (props) => (
       <label className="">Your todo:</label>
         <div className="">
         <input name="title" type="text" className="input is-primary"/>
-        <button className="button is-link mt-5">Submit</button>
+        <button className="button is-link mt-5">送信</button>
       </div>
     </div>
   </form>
